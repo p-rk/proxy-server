@@ -15,6 +15,7 @@ try {
   const httpsAgent = new SocksProxyAgent(info);
   const proxy = httpProxy.createProxyServer({
     ws: true,
+    ignorePath: true,
   });
   handleRequest = (req, res) => {
     delete req.headers.host;
